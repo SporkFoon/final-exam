@@ -62,7 +62,7 @@ class ArtGenerator:
 
         elif choice == 5:
             for _ in range(20):
-                size = random.randint(50, 150)
+                size = random.randint(1, 50)
                 position = [random.randint(-300, 300), random.randint(-200, 200)]
                 color = self.get_new_color()
                 border_size = random.randint(1, 5)
@@ -73,7 +73,7 @@ class ArtGenerator:
 
         elif choice == 6:
             for _ in range(20):
-                size = random.randint(50, 150)
+                size = random.randint(1, 50)
                 position = [random.randint(-300, 300), random.randint(-200, 200)]
                 color = self.get_new_color()
                 border_size = random.randint(1, 5)
@@ -84,7 +84,7 @@ class ArtGenerator:
 
         elif choice == 7:
             for _ in range(20):
-                size = random.randint(50, 150)
+                size = random.randint(1, 50)
                 position = [random.randint(-300, 300), random.randint(-200, 200)]
                 color = self.get_new_color()
                 border_size = random.randint(1, 5)
@@ -92,6 +92,27 @@ class ArtGenerator:
                 for i in range(4):
                 	size1 = size  * i
                 	self.draw_polygon(5, size1, position, color, border_size, rotation)
+
+        elif choice == 8:
+            for _ in range(10):
+            	num_sides = random.randint(3, 5)
+            	size = random.randint(1, 50)
+            	position = [random.randint(-300, 300), random.randint(-200, 200)]
+            	color = self.get_new_color()
+            	border_size = random.randint(1, 5)
+            	rotation = random.randint(0, 360)
+                if num_sides == 3:
+                	for i in range(4):
+                		size1 = size  * i
+                		self.draw_polygon(3, size1, position, color, border_size, rotation)
+                elif num_sides == 4:
+                	for i in range(4):
+                		size1 = size  * i
+                		self.draw_polygon(4, size1, position, color, border_size, rotation)
+                elif num_sides == 5:
+                	for i in range(4):
+                		size1 = size  * i
+                		self.draw_polygon(5, size1, position, color, border_size, rotation)
 
         else:
             print("Invalid choice. Please enter a number between 1 and 8.")
